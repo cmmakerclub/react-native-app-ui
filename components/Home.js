@@ -41,6 +41,8 @@ export default class extends Component {
                         marginTop: 30,
                         padding: 5,
                         height: 40,
+                        alignSelf: 'stretch',
+                        textAlign: 'left',
                         borderColor: 'gray',
                         borderWidth: 1
                     }}
@@ -49,6 +51,8 @@ export default class extends Component {
                 />
                 <TextInput
                     style={{
+                        alignSelf: 'stretch',
+                        textAlign: 'left',
                         borderRadius: 5,
                         marginTop: 30,
                         padding: 5,
@@ -61,13 +65,9 @@ export default class extends Component {
                 />
                 {/*<Button style={styles.buttonStyle6} textStyle={styles.textStyle}>Link</Button>*/}
                 <Button style={styles.buttonStyle4} textStyle={styles.textStyle}>Login</Button>
-                <View style={{
-                    height: 40,
-                    flexDirection: 'row',
-                    justifyContent: 'space-around'
-                }}>
-                    <Text style={{textAlign: 'left', alignSelf: 'center', backgroundColor: 'transparent', flex: 1}}>Register</Text>
-                    <Text style={{textAlign: 'right', alignSelf: 'center', backgroundColor: 'transparent', flex: 1}}>Forgot?</Text>
+                <View style={{ height: 40, flexDirection: 'row', justifyContent: 'space-around' }}>
+                    <Text style={styles.textBottomStyleLeft}>Register</Text>
+                    <Text style={styles.textBottomStyleRight}>Forgot?</Text>
                 </View>
             </View>
         );
@@ -139,5 +139,11 @@ const styles = StyleSheet.create({
         height: 40,
         alignItems: 'center',
         flexDirection: 'row',
+    },
+    textBottomStyleLeft: {
+        textAlign: 'left', alignSelf: 'center', backgroundColor: 'transparent', flex: 1,
+    },
+    textBottomStyleRight: {
+        textAlign: 'right', alignSelf: 'center', backgroundColor: 'transparent', flex: 1
     }
 });
