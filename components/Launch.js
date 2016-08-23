@@ -8,7 +8,8 @@ import {
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    TouchableOpacity
 } from "react-native";
 
 import Button from "react-native-button";
@@ -21,14 +22,20 @@ let landingImage = require("../cmmc1.png");
 export default class extends Component {
     componentDidMount() {
         setTimeout(() => {
-            Actions.home({data:"Custom data"});
+            Actions.home({data: "Custom data"});
         }, 30);
+    }
+
+    _onPressButton() {
+        Actions.home();
     }
 
     render() {
         return (
             <View {...this.props} style={styles.container}>
-                <Image source={landingImage} style={styles.backgroundImage}/>
+                <TouchableOpacity onPress={this._onPressButton}  style={styles.backgroundImageTouchOpacity}>
+                    <Image source={landingImage} style={styles.backgroundImage}/>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -42,8 +49,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
+    backgroundImageTouchOpacity: {
+        alignSelf: 'stretch',
+    },
+
     backgroundImage: {
-        flex: 1,
         alignSelf: 'stretch',
         width: null,
         resizeMode: 'contain',
