@@ -21,14 +21,13 @@ export default class extends Component {
     componentDidMount() {
         setTimeout(() => {
             Actions.home();
-        }, 1500);
+        }, 1000);
     }
 
     render() {
         return (
             <View {...this.props} style={styles.container}>
-                <Image source={landingImage} style={styles.backgroundImage}>
-                </Image>
+                <Image source={landingImage} style={styles.backgroundImage}/>
             </View>
         );
     }
@@ -51,7 +50,6 @@ const styles = StyleSheet.create({
 
     button: {
         backgroundColor: 'transparent',
-        //backgroundColor: 'blue',
         position: 'absolute',
         width: 250,
         height: 200,
