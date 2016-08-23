@@ -1,7 +1,8 @@
 'use strict';
 
 var React = require('react-native');
-var {AppRegistry, Navigator, StyleSheet,Text,View} = React;
+var {AppRegistry} = React;
 
 import App from './App';
+
 AppRegistry.registerComponent('myreact3', () => App);
