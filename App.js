@@ -3,7 +3,7 @@
  */
 
 'use strict';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     AppRegistry,
     StyleSheet,
@@ -11,31 +11,25 @@ import {
     View
 } from 'react-native';
 
+import {Actions, Scene, Router} from 'react-native-router-flux';
+
+
+import Launch from './components/Launch'
+import Home from './components/Home'
+
+
+const scenes = Actions.create(
+    <Scene key="root">
+        <Scene key="launch" component={Launch} initial hideNavBar title="Launch"/>
+        <Scene key="home" component={Home} />
+    </Scene>
+);
+
+
 class myreact3 extends Component {
     render() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Hello CMMC React-Native
-                </Text>
-            </View>
-        );
+        return ( <Router scenes={scenes}/> );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-});
-
 
 export default myreact3;
