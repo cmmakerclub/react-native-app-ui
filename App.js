@@ -20,8 +20,8 @@ import Home from './components/Home'
 
 const scenes = Actions.create(
     <Scene key="root">
-        <Scene key="launch" component={Launch} initial hideNavBar title="Launch"/>
-        <Scene key="home" component={Home} />
+        <Scene key="launch" component={Launch} initial hideNavBar={true} hideTabBar title="Launch"/>
+        <Scene key="home" component={Home} hideNavBar={false} title="Home"/>
     </Scene>
 );
 

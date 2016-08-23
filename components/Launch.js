@@ -15,13 +15,14 @@ import Button from "react-native-button";
 import {Scene, Router} from 'react-native-router-flux';
 import {Actions} from "react-native-router-flux";
 
-let landingImage = require("../landing.png");
+// let landingImage = require("../landing.png");
+let landingImage = require("../cmmc1.png");
 
 export default class extends Component {
     componentDidMount() {
         setTimeout(() => {
-            Actions.home();
-        }, 1000);
+            Actions.home({data:"Custom data"});
+        }, 30);
     }
 
     render() {
@@ -35,7 +36,7 @@ export default class extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#519af2',
+        backgroundColor: "#F5FCFF",
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
