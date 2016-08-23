@@ -1,0 +1,3 @@
+rootProject.name = 'myreact3'
+
+include ':app'
