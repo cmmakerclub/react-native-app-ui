@@ -16,12 +16,14 @@ import {Actions, Scene, Router} from 'react-native-router-flux';
 
 import Launch from './components/Launch'
 import Home from './components/Home'
+import Login from './components/Login'
 
 
 const scenes = Actions.create(
     <Scene key="root">
         <Scene key="launch" component={Launch} initial hideNavBar={true} hideTabBar title="Launch"/>
         <Scene key="home" component={Home} hideNavBar={false} title="Home"/>
+        <Scene key="login" component={Login} hideNavBar={false} title="Login"/>
     </Scene>
 );
 

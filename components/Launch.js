@@ -9,7 +9,7 @@ import {
     Text,
     StyleSheet,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
 } from "react-native";
 
 import Button from "react-native-button";
