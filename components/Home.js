@@ -3,7 +3,8 @@
  */
 
 import React, {Component} from 'react';
-import {View, Image, Text, StyleSheet, Platform} from "react-native";
+import {View, Image, Text, TextInput} from "react-native";
+import {StyleSheet, Platform} from "react-native";
 import {Actions} from 'react-native-router-flux';
 import Button from 'apsl-react-native-button'
 
@@ -11,7 +12,10 @@ import Button from 'apsl-react-native-button'
 export default class extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            email: 'Email',
+            password: 'Password',
+        };
     }
 
     componentDidMount() {
@@ -28,11 +32,43 @@ export default class extends Component {
             <View style={styles.container}>
                 <Image source={require("../cmmc1.png")} style={styles.cmmcImage}/>
                 <Button
-                    style={styles.buttonStyle4} textStyle={styles.textStyle}
-                    onPress={this._onPress.bind(this)}> Hello
-                </Button>
-                <Button style={styles.buttonStyle5} textStyle={styles.textStyle}>Link</Button>
-                <Button style={styles.buttonStyle6} textStyle={styles.textStyle}>Link</Button>
+                    style={styles.buttonStyle5} textStyle={styles.textStyle}
+                    onPress={this._onPress.bind(this)}>Login With Facebook</Button>
+                <Text>or</Text>
+                <TextInput
+                    style={{
+                        borderRadius: 5,
+                        marginTop: 30,
+                        padding: 5,
+                        height: 40,
+                        borderColor: 'gray',
+                        borderWidth: 1
+                    }}
+                    onChangeText={(text) => this.setState({text})}
+                    value={this.state.email}
+                />
+                <TextInput
+                    style={{
+                        borderRadius: 5,
+                        marginTop: 30,
+                        padding: 5,
+                        height: 40,
+                        borderColor: 'gray',
+                        borderWidth: 1
+                    }}
+                    onChangeText={(text) => this.setState({text})}
+                    value={this.state.password}
+                />
+                {/*<Button style={styles.buttonStyle6} textStyle={styles.textStyle}>Link</Button>*/}
+                <Button style={styles.buttonStyle4} textStyle={styles.textStyle}>Login</Button>
+                <View style={{
+                    height: 40,
+                    flexDirection: 'row',
+                    justifyContent: 'space-around'
+                }}>
+                    <Text style={{textAlign: 'left', alignSelf: 'center', backgroundColor: 'transparent', flex: 1}}>Register</Text>
+                    <Text style={{textAlign: 'right', alignSelf: 'center', backgroundColor: 'transparent', flex: 1}}>Forgot?</Text>
+                </View>
             </View>
         );
     }
@@ -40,11 +76,10 @@ export default class extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 30,
         paddingLeft: 30,
         paddingRight: 30,
         flex: 1,
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#F5FCFF",
     },
@@ -70,6 +105,7 @@ const styles = StyleSheet.create({
     },
     buttonStyle4: {
         borderColor: '#27ae60',
+        marginTop: 20,
         backgroundColor: '#2ecc71'
     },
     buttonStyle5: {
@@ -77,6 +113,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#3498db'
     },
     buttonStyle6: {
+        marginTop: 10,
         borderColor: '#8e44ad',
         backgroundColor: '#9b59b6'
     },
